@@ -6,8 +6,8 @@ select distinct c.customer_id,
 	   sum(p.amount) over (partition by c.customer_id, date_part('month', p.payment_date))
 from customer c
 	join payment p on p.customer_id = c.customer_id
-order by 1```
-
+order by 1
+```
 
 -- 2. На какую сумму продал каждый сотрудник магазина
 ```sql
