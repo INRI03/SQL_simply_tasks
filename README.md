@@ -129,7 +129,7 @@ select "month" from
 
 --14. Одним запросом ответить на 2 вопроса: в какой из месяцев взяли в аренду фильмов больше всего? На сколько по отношению к предыдущему месяцу
 -- было сдано в аренду больше/меньше фильмов.
-	```sql
+```sql
 with cte as (select distinct date_part('month', r.rental_date) "month",
 	   		    count(r.rental_id) over (partition by date_part('month', r.rental_date))
 			 from rental r
